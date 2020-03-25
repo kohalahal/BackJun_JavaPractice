@@ -9,31 +9,34 @@ import java.util.StringTokenizer;
 
 public class Q15552 {
 
-	public static void main(String[] args) throws NumberFormatException, IOException {
-		// TODO Auto-generated method stub
-		String s = "";
+	public static void main(String[] args) throws IOException {
+
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(br.readLine());
-		
-		int t = Integer.parseInt(br.readLine());
-		int[] a = new int[t];
-		int[] b = new int[t];
-		br.close();
-		while ( st.hasMoreTokens()) {
-		for ( int i = 0 ; i < t ; i++ ) {
-			
-			a[i] = Integer.parseInt(st.nextToken());
-			b[i] = Integer.parseInt(st.nextToken());
-			
-		}
-		}
-		br.close();
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-		for ( int i = 0 ; i < t ; i ++ ) {
-			bw.write(a[i]+b[i]);
-			
-			
+		String line = br.readLine();
+		StringTokenizer st = new StringTokenizer(line);
+		
+		int t = Integer.parseInt(st.nextToken());
+		
+		for ( int i = 0 ; i < t ; i++ ) {
+			line = br.readLine();
+			st = new StringTokenizer(line);
+			int a = Integer.parseInt(st.nextToken());
+			int b = Integer.parseInt(st.nextToken());
+			int x = a+b;
+			bw.write(x+"\n");
 		}
+		br.close();
+		bw.flush();
+		
+//		for ( int i = 0 ; i < t ; i ++ ) {
+//			int x = a[i]+b[i];
+//			bw.write(x+"\n");
+//			bw.flush();
+//			//System.out.println((a[i]+b[i]));
+//			
+//			
+//		} bw.close();
 		
 	}
 
